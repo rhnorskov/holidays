@@ -3,7 +3,7 @@
   "scripts": {
     "build": "swc src -d dist",
     "dev": "nodemon --ext ts --exec \"npm run build && node dist/main.js\"",
-    "start": "npm run build && node dist/main.js"
+    "start": "node dist/main.js"
   },
   "dependencies": {
     "@nestjs/common": "^8.4.4",
