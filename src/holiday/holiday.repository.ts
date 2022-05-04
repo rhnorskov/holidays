@@ -36,11 +36,11 @@ export class HolidayRepository {
         date: date.set({ month: 5, day: 1 }),
       },
       {
-        name: "General Prayer Day",
+        name: "Mother's Day",
         date: date.set({ month: 5 }).endOf("week").plus({ week: 1 }),
       },
       {
-        name: "Mother's Day",
+        name: "Great Prayer Day",
         date: easter.plus({ days: 26 }),
       },
       {
