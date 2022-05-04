@@ -1,0 +1,25 @@
+{
+  "type": "module",
+  "scripts": {
+    "build": "swc src -d dist",
+    "dev": "nodemon --ext ts --exec \"npm run build && node dist/main.js\"",
+    "start": "npm run build && node dist/main.js"
+  },
+  "dependencies": {
+    "@nestjs/common": "^8.4.4",
+    "@nestjs/mapped-types": "*",
+    "@nestjs/platform-express": "^8.4.4",
+    "@types/express": "^4.17.13",
+    "@types/luxon": "^2.3.2",
+    "@types/node": "^17.0.31",
+    "computus": "^1.0.6",
+    "ics": "^2.35.0",
+    "luxon": "^2.3.2"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^8.4.4",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.177",
+    "nodemon": "^2.0.16"
+  }
+}
