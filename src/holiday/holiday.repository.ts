@@ -68,7 +68,7 @@ export class HolidayRepository {
         date: easter.plus({ days: 39 }),
       },
       {
-        name: "Pentecost Sunday",
+        name: "Whit Sunday",
         date: easter.plus({ days: 49 }),
       },
       {
