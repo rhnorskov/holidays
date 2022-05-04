@@ -7,13 +7,25 @@ import { HolidayEntity } from "./holiday.entity.js";
 @Injectable()
 export class HolidayRepository {
   findAll(year: number): HolidayEntity[] {
-    const date = DateTime.now().set({ year }).startOf("year");
-    const easter = DateTime.fromJSDate(computus(year));
+    const date = DateTime.utc().set({ year }).startOf("year");
+    const easter = DateTime.fromJSDate(computus(year), { zone: "utc" });
 
     return [
       {
         name: "New Year's Day",
         date: date.set({ month: 1, day: 1 }),
+      },
+      {
+        name: "Valentine's Day",
+        date: date.set({ month: 2, day: 14 }),
+      },
+      {
+        name: "Carnival",
+        date: easter.minus({ weeks: 7 }),
+      },
+      {
+        name: "Daylight Saving Time starts",
+        date: date.set({ month: 3 }).endOf("week").plus({ weeks: 3 }),
       },
       {
         name: "Palm Sunday",
@@ -28,12 +40,20 @@ export class HolidayRepository {
         date: easter.minus({ day: 2 }),
       },
       {
+        name: "Easter Sunday",
+        date: easter,
+      },
+      {
         name: "Easter Monday",
         date: easter.plus({ day: 1 }),
       },
       {
         name: "International Workers' Day",
         date: date.set({ month: 5, day: 1 }),
+      },
+      {
+        name: "Liberation Day",
+        date: date.set({ month: 5, day: 5 }),
       },
       {
         name: "Mother's Day",
@@ -64,7 +84,15 @@ export class HolidayRepository {
         date: date.set({ month: 6, day: 5 }),
       },
       {
-        name: "Christmas Eve Day",
+        name: "Daylight Saving Time ends",
+        date: date.set({ month: 10 }).endOf("week").plus({ weeks: 4 }),
+      },
+      {
+        name: "Halloween",
+        date: date.set({ month: 10, day: 31 }),
+      },
+      {
+        name: "Christmas Eve",
         date: date.set({ month: 12, day: 24 }),
       },
       {
@@ -72,7 +100,7 @@ export class HolidayRepository {
         date: date.set({ month: 12, day: 25 }),
       },
       {
-        name: "Second Day of Christmas",
+        name: "2nd Christmas Day",
         date: date.set({ month: 12, day: 26 }),
       },
       {
