@@ -1,0 +1,28 @@
+{
+  "holiday": {
+    "new.years.day": "Nytårsdag",
+    "valentines.day": "Valentinsdag",
+    "carnival": "Fastelavn",
+    "daylight.saving.time.starts": "Sommertid starter",
+    "palm.sunday": "Palmesøndag",
+    "maundy.thursday": "Skærtorsdag",
+    "good.friday": "Langfredag",
+    "easter.sunday": "Påskedag",
+    "easter.monday": "Anden påskedag",
+    "international.workers.day": "Arbejdernes internationale kampdag",
+    "liberation.day": "Befrielsesdagen",
+    "mothers.day": "Mors dag",
+    "great.prayer.day": "Store bededag",
+    "ascension.day": "Kristi himmelfartsdag",
+    "whit.sunday": "Pinsedag",
+    "whit.monday": "Anden pinsedag",
+    "constitution.day": "Grundlovsdag",
+    "fathers.day": "Fars dag",
+    "daylight.saving.time.ends": "Sommertid slutter",
+    "halloween": "Halloween",
+    "christmas.eve": "Juleaften",
+    "christmas.day": "Juledag",
+    "2nd.christmas.day": "Anden juledag",
+    "new.years.eve": "Nytårsaften"
+  }
+}

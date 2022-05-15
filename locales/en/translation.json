@@ -1,0 +1,28 @@
+{
+  "holiday": {
+    "new.years.day": "New Year's Day",
+    "valentines.day": "Valentine's Day",
+    "carnival": "Carnival",
+    "daylight.saving.time.starts": "Daylight Saving Time starts",
+    "palm.sunday": "Palm Sunday",
+    "maundy.thursday": "Maundy Thursday",
+    "good.friday": "Good Friday",
+    "easter.sunday": "Easter Sunday",
+    "easter.monday": "Easter Monday",
+    "international.workers.day": "International Workers' Day",
+    "liberation.day": "Liberation Day",
+    "mothers.day": "Mother's Day",
+    "great.prayer.day": "Great Prayer Day",
+    "ascension.day": "Ascension Day",
+    "whit.sunday": "Whit Sunday",
+    "whit.monday": "Whit Monday",
+    "constitution.day": "Constitution Day",
+    "fathers.day": "Father's Day",
+    "daylight.saving.time.ends": "Daylight Saving Time ends",
+    "halloween": "Halloween",
+    "christmas.eve": "Christmas Eve",
+    "christmas.day": "Christmas Day",
+    "2nd.christmas.day": "2nd Christmas Day",
+    "new.years.eve": "New Year's Eve"
+  }
+}

@@ -1,110 +1,110 @@
 import { Injectable } from "@nestjs/common";
-import { gregorian as computus } from "computus";
+import { computus } from "computus";
 import { DateTime } from "luxon";
 
 import { HolidayEntity } from "./holiday.entity.js";
 
 @Injectable()
 export class HolidayRepository {
-  findAll(year: number): HolidayEntity[] {
+  async findAll(year: number): Promise<HolidayEntity[]> {
     const date = DateTime.utc().set({ year }).startOf("year");
     const easter = DateTime.fromJSDate(computus(year), { zone: "utc" });
 
     return [
       {
-        name: "New Year's Day",
+        key: "new.years.day",
         date: date.set({ month: 1, day: 1 }),
       },
       {
-        name: "Valentine's Day",
+        key: "valentines.day",
         date: date.set({ month: 2, day: 14 }),
       },
       {
-        name: "Carnival",
+        key: "carnival",
         date: easter.minus({ weeks: 7 }),
       },
       {
-        name: "Daylight Saving Time starts",
+        key: "daylight.saving.time.starts",
         date: date.set({ month: 3 }).endOf("week").plus({ weeks: 3 }),
       },
       {
-        name: "Palm Sunday",
+        key: "palm.sunday",
         date: easter.minus({ week: 1 }),
       },
       {
-        name: "Maundy Thursday",
+        key: "maundy.thursday",
         date: easter.minus({ day: 3 }),
       },
       {
-        name: "Good Friday",
+        key: "good.friday",
         date: easter.minus({ day: 2 }),
       },
       {
-        name: "Easter Sunday",
+        key: "easter.sunday",
         date: easter,
       },
       {
-        name: "Easter Monday",
+        key: "easter.monday",
         date: easter.plus({ day: 1 }),
       },
       {
-        name: "International Workers' Day",
+        key: "international.workers.day",
         date: date.set({ month: 5, day: 1 }),
       },
       {
-        name: "Liberation Day",
+        key: "liberation.day",
         date: date.set({ month: 5, day: 5 }),
       },
       {
-        name: "Mother's Day",
+        key: "mothers.day",
         date: date.set({ month: 5 }).endOf("week").plus({ week: 1 }),
       },
       {
-        name: "Great Prayer Day",
+        key: "great.prayer.day",
         date: easter.plus({ days: 26 }),
       },
       {
-        name: "Ascension Day",
+        key: "ascension.day",
         date: easter.plus({ days: 39 }),
       },
       {
-        name: "Whit Sunday",
+        key: "whit.sunday",
         date: easter.plus({ days: 49 }),
       },
       {
-        name: "Whit Monday",
+        key: "whit.monday",
         date: easter.plus({ days: 50 }),
       },
       {
-        name: "Constitution Day",
+        key: "constitution.day",
         date: date.set({ month: 6, day: 5 }),
       },
       {
-        name: "Father's Day",
+        key: "fathers.day",
         date: date.set({ month: 6, day: 5 }),
       },
       {
-        name: "Daylight Saving Time ends",
+        key: "daylight.saving.time.ends",
         date: date.set({ month: 10 }).endOf("week").plus({ weeks: 4 }),
       },
       {
-        name: "Halloween",
+        key: "halloween",
         date: date.set({ month: 10, day: 31 }),
       },
       {
-        name: "Christmas Eve",
+        key: "christmas.eve",
         date: date.set({ month: 12, day: 24 }),
       },
       {
-        name: "Christmas Day",
+        key: "christmas.day",
         date: date.set({ month: 12, day: 25 }),
       },
       {
-        name: "2nd Christmas Day",
+        key: "2nd.christmas.day",
         date: date.set({ month: 12, day: 26 }),
       },
       {
-        name: "New Year's Eve",
+        key: "new.years.eve",
         date: date.set({ month: 12, day: 31 }),
       },
     ];
