@@ -1,24 +1,42 @@
-import { Controller, Get, Param, StreamableFile } from "@nestjs/common";
+import { Controller, Get, StreamableFile } from "@nestjs/common";
 import { DateTime, Interval } from "luxon";
 
 import { HolidayService } from "./holiday.service.js";
-import { HolidaysParams } from "./holiday.types.js";
 
 @Controller("")
 export class HolidayController {
   constructor(private readonly holidayService: HolidayService) {}
 
-  @Get(":language?")
-  async holidays(@Param() { language }: HolidaysParams) {
+  @Get("en")
+  async english() {
     const interval = Interval.fromDateTimes(
       DateTime.now().minus({ years: 5 }).startOf("year"),
       DateTime.now().plus({ years: 5 }).endOf("year")
     );
 
-    const ics = await this.holidayService.generateIcs(interval, language);
+    const ics = await this.holidayService.generateIcs(interval, "en");
 
     return new StreamableFile(Buffer.from(ics, "utf-8"), {
       type: "text/calendar",
     });
+  }
+
+  @Get("da")
+  async danish() {
+    const interval = Interval.fromDateTimes(
+      DateTime.now().minus({ years: 5 }).startOf("year"),
+      DateTime.now().plus({ years: 5 }).endOf("year")
+    );
+
+    const ics = await this.holidayService.generateIcs(interval, "da");
+
+    return new StreamableFile(Buffer.from(ics, "utf-8"), {
+      type: "text/calendar",
+    });
+  }
+
+  @Get("health")
+  async health() {
+    return null;
   }
 }
