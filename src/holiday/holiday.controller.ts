@@ -4,7 +4,7 @@ import { DateTime, Interval } from "luxon";
 import { HolidayService } from "./holiday.service.js";
 import { HolidaysParams } from "./holiday.types.js";
 
-@Controller("holidays")
+@Controller("")
 export class HolidayController {
   constructor(private readonly holidayService: HolidayService) {}
 

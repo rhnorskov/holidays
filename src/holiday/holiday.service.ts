@@ -42,7 +42,7 @@ export class HolidayService {
 
     const { value, error } = createEvents(events);
 
-    if (error) throw error;
+    if (!value || error) throw error;
 
     return value;
   }

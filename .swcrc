@@ -9,5 +9,6 @@
       "legacyDecorator": true,
       "decoratorMetadata": true
     }
-  }
+  },
+  "sourceMaps": true
 }
