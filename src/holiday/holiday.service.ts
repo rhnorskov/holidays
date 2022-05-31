@@ -35,7 +35,7 @@ export class HolidayService {
         title: t(`holiday.${holiday.key}`, { lng: language }),
         start: [start.year, start.month, start.day],
         end: [end.year, end.month, end.day],
-        productId: `rhnorskov/holidays/en/${language}`,
+        productId: `com.rhnorskov.holidays.${language}`,
         uid: hash + "@rhnorskov.com",
       };
     });
