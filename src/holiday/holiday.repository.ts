@@ -84,6 +84,10 @@ export class HolidayRepository {
         date: date.set({ month: 6, day: 5 }),
       },
       {
+        key: "saint.johns.eve",
+        date: date.set({ month: 6, day: 23 }),
+      },
+      {
         key: "daylight.saving.time.ends",
         date: date.set({ month: 10 }).endOf("week").plus({ weeks: 4 }),
       },
