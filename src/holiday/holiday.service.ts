@@ -5,6 +5,7 @@ import { t } from "i18next";
 import { createEvents, EventAttributes } from "ics";
 import { Interval } from "luxon";
 
+import { Language } from "../i18n/i18n.types.js";
 import { HolidayRepository } from "./holiday.repository.js";
 
 @Injectable()
@@ -31,11 +32,16 @@ export class HolidayService {
         .update(`holiday.${holiday.key}` + start.toISO())
         .digest("base64");
 
+      const description = Object.entries(Language)
+        .map(([key, lng]) => `${key}: ${t(`holiday.${holiday.key}`, { lng })}`)
+        .join("\n");
+
       return {
         title: t(`holiday.${holiday.key}`, { lng: language }),
         start: [start.year, start.month, start.day],
         end: [end.year, end.month, end.day],
         productId: `com.rhnorskov.holidays.${language}`,
+        description: description,
         uid: hash + "@rhnorskov.com",
       };
     });
