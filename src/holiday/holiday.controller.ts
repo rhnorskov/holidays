@@ -1,5 +1,6 @@
+import { Temporal } from "@js-temporal/polyfill";
 import { Controller, Get, StreamableFile } from "@nestjs/common";
-import { DateTime, Interval } from "luxon";
+import { startOfYear, endOfYear, Interval } from "temporal-fns";
 
 import { HolidayService } from "./holiday.service.js";
 
@@ -9,10 +10,10 @@ export class HolidayController {
 
   @Get("en")
   async english() {
-    const interval = Interval.fromDateTimes(
-      DateTime.now().minus({ years: 5 }).startOf("year"),
-      DateTime.now().plus({ years: 5 }).endOf("year")
-    );
+    const interval: Interval = {
+      start: startOfYear(Temporal.Now.plainDateISO().subtract({ years: 5 })),
+      end: endOfYear(Temporal.Now.plainDateISO().add({ years: 5 })),
+    };
 
     const ics = await this.holidayService.generateIcs(interval, "en");
 
@@ -23,20 +24,15 @@ export class HolidayController {
 
   @Get("da")
   async danish() {
-    const interval = Interval.fromDateTimes(
-      DateTime.now().minus({ years: 5 }).startOf("year"),
-      DateTime.now().plus({ years: 5 }).endOf("year")
-    );
+    const interval: Interval = {
+      start: startOfYear(Temporal.Now.plainDateISO().subtract({ years: 5 })),
+      end: endOfYear(Temporal.Now.plainDateISO().add({ years: 5 })),
+    };
 
     const ics = await this.holidayService.generateIcs(interval, "da");
 
     return new StreamableFile(Buffer.from(ics, "utf-8"), {
       type: "text/calendar",
     });
-  }
-
-  @Get("health")
-  async health() {
-    return null;
   }
 }

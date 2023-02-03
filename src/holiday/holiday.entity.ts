@@ -1,6 +1,6 @@
-import { DateTime } from "luxon";
+import { Temporal } from "@js-temporal/polyfill";
 
 export class HolidayEntity {
   key!: string;
-  date!: DateTime;
+  date!: Temporal.PlainDate;
 }

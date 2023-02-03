@@ -1,3 +1,3 @@
 {
-  "extends": ["@rhnorskov"]
+  "extends": "@rhnorskov/eslint-config"
 }
