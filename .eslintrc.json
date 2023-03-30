@@ -1,3 +1,3 @@
 {
-  "extends": ["@rhnorskov"]
+  "extends": "next/core-web-vitals"
 }

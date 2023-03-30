@@ -1,36 +1,29 @@
 {
-  "name": "holidays-service",
-  "type": "module",
+  "name": "holidays",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "swc src -d dist",
-    "dev": "nodemon --ext ts --exec \"npm run build && node dist/main.js --enable-source-maps\"",
-    "start": "node dist/main.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@nestjs/common": "^8.4.4",
-    "@nestjs/config": "^2.0.1",
-    "@nestjs/core": "^8.4.5",
-    "@nestjs/platform-express": "^8.4.5",
-    "class-transformer": "^0.5.1",
-    "class-validator": "^0.13.2",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.31",
+    "@types/react-dom": "18.0.11",
     "computus": "^2.0.4",
-    "i18next": "^21.8.4",
-    "i18next-fs-backend": "^1.1.4",
-    "ics": "github:rhnorskov/ics",
-    "luxon": "^2.4.0"
+    "eslint": "8.37.0",
+    "eslint-config-next": "13.2.4",
+    "i18next": "^22.4.13",
+    "ics": "^3.1.0",
+    "luxon": "^3.3.0",
+    "next": "13.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.0.2"
   },
   "devDependencies": {
-    "@rhnorskov/eslint-config": "^1.0.0",
-    "@rhnorskov/prettier-config": "^1.0.0",
-    "@swc/cli": "^0.1.57",
-    "@swc/core": "^1.2.182",
-    "@types/express": "^4.17.13",
-    "@types/luxon": "^2.3.2",
-    "@types/node": "^17.0.33",
-    "nodemon": "^2.0.16"
-  },
-  "engines": {
-    "node": ">=16",
-    "npm": ">=8"
+    "@types/luxon": "^3.2.0"
   }
 }
