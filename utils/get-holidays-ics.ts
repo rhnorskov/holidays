@@ -21,7 +21,7 @@ export function getHolidaysIcs(
         ([key, lng]) => `${key}: ${t(`holiday.${holiday.key}`, { lng })}`
       ),
       holiday.isBankHoliday
-        ? t("holiday.bank.holiday", { lng: language })
+        ? t("common.bank.holiday", { lng: language })
         : null,
     ].filter(Boolean);
 
