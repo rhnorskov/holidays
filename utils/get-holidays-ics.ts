@@ -16,14 +16,13 @@ export function getHolidaysIcs(
       .update(`holiday.${holiday.key}` + start.toISO())
       .digest("base64");
 
-    const description = [
-      ...Object.entries(Language).map(
-        ([key, lng]) => `${key}: ${t(`holiday.${holiday.key}`, { lng })}`
-      ),
-      holiday.isBankHoliday
-        ? t("common.bank.holiday", { lng: language })
-        : null,
-    ].filter(Boolean);
+    const description = Object.entries(Language).map(
+      ([key, lng]) => `${key}: ${t(`holiday.${holiday.key}`, { lng })}`
+    );
+
+    if (holiday.isBankHoliday) {
+      description.push(t("common.bank.holiday", { lng: language }));
+    }
 
     return {
       title: t(`holiday.${holiday.key}`, { lng: language }) ?? holiday.key,
