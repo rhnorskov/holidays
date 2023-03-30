@@ -20,9 +20,10 @@ export function getHolidaysIcs(
       ...Object.entries(Language).map(
         ([key, lng]) => `${key}: ${t(`holiday.${holiday.key}`, { lng })}`
       ),
-      "",
-      t("common.bank.holiday", { lng: language }),
-    ];
+      holiday.isBankHoliday
+        ? t("holiday.bank.holiday", { lng: language })
+        : null,
+    ].filter(Boolean);
 
     return {
       title: t(`holiday.${holiday.key}`, { lng: language }) ?? holiday.key,
