@@ -4,8 +4,14 @@ import { DateTime } from "luxon";
 import type { Holiday } from "@/types/holiday";
 
 export function getHolidaysByYear(year: number): Holiday[] {
-  const date = DateTime.utc().set({ year }).startOf("year");
-  const easter = DateTime.fromJSDate(computus(year), { zone: "utc" });
+  const date = DateTime.local()
+    .setZone("Europe/Copenhagen")
+    .set({ year })
+    .startOf("year");
+
+  const easter = DateTime.fromJSDate(computus(year), {
+    zone: "Europe/Copenhagen",
+  });
 
   return [
     {
@@ -22,7 +28,7 @@ export function getHolidaysByYear(year: number): Holiday[] {
     },
     {
       key: "daylight.saving.time.starts",
-      date: date.set({ month: 3 }).endOf("week").plus({ weeks: 3 }),
+      date: date.set({ month: 3, day: 31 }).set({ weekday: 0 }),
     },
     {
       key: "palm.sunday",
@@ -86,7 +92,7 @@ export function getHolidaysByYear(year: number): Holiday[] {
     },
     {
       key: "daylight.saving.time.ends",
-      date: date.set({ month: 10 }).endOf("week").plus({ weeks: 4 }),
+      date: date.set({ month: 10, day: 31 }).set({ weekday: 0 }),
     },
     {
       key: "halloween",

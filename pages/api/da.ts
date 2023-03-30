@@ -19,7 +19,7 @@ export default async function handler(
   const holidays = getHolidaysByInterval(interval);
   const ics = getHolidaysIcs(holidays, Language.Danish);
 
-  res.setHeader("Content-Type", "text/calendar");
-  res.setHeader("Content-Disposition", "attachment; filename=holidays.ics");
+  // res.setHeader("Content-Type", "text/calendar");
+  // res.setHeader("Content-Disposition", "attachment; filename=holidays.ics");
   res.status(200).send(ics);
 }
