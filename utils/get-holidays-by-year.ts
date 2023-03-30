@@ -13,6 +13,13 @@ export function getHolidaysByYear(year: number): Holiday[] {
     zone: "Europe/Copenhagen",
   });
 
+  const lastSundayOfMonth = (month: number) => {
+    const lastDayOfMonth = date.set({ month }).endOf("month");
+    return lastDayOfMonth.minus({
+      days: lastDayOfMonth.weekday % 7,
+    });
+  };
+
   return [
     {
       key: "new.years.day",
@@ -31,7 +38,7 @@ export function getHolidaysByYear(year: number): Holiday[] {
     },
     {
       key: "daylight.saving.time.starts",
-      date: date.set({ month: 3, day: 31 }).set({ weekday: 0 }),
+      date: lastSundayOfMonth(3),
       isBankHoliday: false,
     },
     {
@@ -111,7 +118,7 @@ export function getHolidaysByYear(year: number): Holiday[] {
     },
     {
       key: "daylight.saving.time.ends",
-      date: date.set({ month: 10, day: 31 }).set({ weekday: 0 }),
+      date: lastSundayOfMonth(10),
       isBankHoliday: false,
     },
     {

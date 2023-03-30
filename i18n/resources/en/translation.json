@@ -1,6 +1,6 @@
 {
   "common": {
-    "bank.holidays": "Bank Holiday"
+    "bank.holiday": "Bank Holiday"
   },
   "holiday": {
     "new.years.day": "New Year's Day",
