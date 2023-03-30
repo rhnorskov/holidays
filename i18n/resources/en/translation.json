@@ -1,4 +1,7 @@
 {
+  "common": {
+    "bank.holidays": "Bank Holiday"
+  },
   "holiday": {
     "new.years.day": "New Year's Day",
     "valentines.day": "Valentine's Day",

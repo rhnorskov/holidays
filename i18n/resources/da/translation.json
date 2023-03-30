@@ -1,4 +1,7 @@
 {
+  "common": {
+    "bank.holiday": "Helligdag"
+  },
   "holiday": {
     "new.years.day": "Nytårsdag",
     "valentines.day": "Valentinsdag",

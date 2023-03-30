@@ -16,16 +16,20 @@ export function getHolidaysIcs(
       .update(`holiday.${holiday.key}` + start.toISO())
       .digest("base64");
 
-    const description = Object.entries(Language)
-      .map(([key, lng]) => `${key}: ${t(`holiday.${holiday.key}`, { lng })}`)
-      .join("\n");
+    const description = [
+      ...Object.entries(Language).map(
+        ([key, lng]) => `${key}: ${t(`holiday.${holiday.key}`, { lng })}`
+      ),
+      "",
+      t("common.bank.holiday", { lng: language }),
+    ];
 
     return {
       title: t(`holiday.${holiday.key}`, { lng: language }) ?? holiday.key,
       start: [start.year, start.month, start.day],
       end: [end.year, end.month, end.day],
       productId: `com.rhnorskov.holidays.${language}`,
-      description: description,
+      description: description.join("\n"),
       uid: hash + "@rhnorskov.com",
     };
   });
