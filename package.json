@@ -7,7 +7,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@js-temporal/polyfill": "^0.4.4",
@@ -20,10 +21,14 @@
     "react-dom": "18.3.1"
   },
   "devDependencies": {
+    "@rhnorskov/eslint-config": "^1",
+    "@rhnorskov/prettier-config": "^1",
     "@types/node": "22.7.4",
     "@types/react": "18.3.10",
     "@types/react-dom": "18.3.0",
     "eslint-config-next": "14.2.14",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
     "typescript": "5.6.2"
   },
   "packageManager": "pnpm@9.12.0"

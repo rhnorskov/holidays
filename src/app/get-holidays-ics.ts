@@ -1,12 +1,15 @@
 import { createHash } from "crypto";
+
 import { t } from "i18next";
 import { createEvents, EventAttributes } from "ics";
-import { Holiday } from "./get-holidays-by-year";
+
 import { Language } from "@/i18n";
+
+import { Holiday } from "./get-holidays-by-year";
 
 export function getHolidaysIcs(
   holidays: Holiday[],
-  language?: Language
+  language?: Language,
 ): string {
   const events = holidays.map((holiday): EventAttributes => {
     const start = holiday.date;
@@ -16,7 +19,7 @@ export function getHolidaysIcs(
       .digest("base64");
 
     const description = Object.entries(Language).map(
-      ([key, lng]) => `${key}: ${t(`holiday.${holiday.key}`, { lng })}`
+      ([key, lng]) => `${key}: ${t(`holiday.${holiday.key}`, { lng })}`,
     );
 
     if (holiday.isBankHoliday) {

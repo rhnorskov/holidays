@@ -1,10 +1,12 @@
-import { init, Language } from "@/i18n";
 import { Temporal } from "@js-temporal/polyfill";
+
+import { initialize, Language } from "@/i18n";
+
 import { getHolidaysByInterval } from "../get-holidays-by-interval";
 import { getHolidaysIcs } from "../get-holidays-ics";
 
 export async function GET() {
-  await init();
+  await initialize();
 
   const now = Temporal.Now.zonedDateTimeISO("Europe/Copenhagen");
 

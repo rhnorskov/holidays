@@ -2,7 +2,7 @@ import { getHolidaysByYear, type Holiday } from "./get-holidays-by-year";
 
 export function getHolidaysByInterval(
   startYear: number,
-  endYear: number
+  endYear: number,
 ): Holiday[] {
   const length = endYear - startYear + 1;
 

@@ -1,7 +1,10 @@
 import { Temporal } from "@js-temporal/polyfill";
 
 export function endOfWeek<
-  T extends Temporal.PlainDate | Temporal.PlainDateTime | Temporal.ZonedDateTime
+  T extends
+    | Temporal.PlainDate
+    | Temporal.PlainDateTime
+    | Temporal.ZonedDateTime,
 >(date: T): T {
   if (date instanceof Temporal.PlainDate) {
     return date.add({ days: 6 - date.dayOfWeek }) as T;
