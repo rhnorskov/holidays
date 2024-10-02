@@ -12,6 +12,7 @@
   "dependencies": {
     "@js-temporal/polyfill": "^0.4.4",
     "computus": "^3.0.1",
+    "eslint": "8",
     "i18next": "^23.15.1",
     "ics": "^3.8.1",
     "next": "14.2.14",
