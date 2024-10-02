@@ -2,6 +2,7 @@
   "name": "holidays",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -9,21 +10,20 @@
     "start": "next start"
   },
   "dependencies": {
-    "computus": "^2.0.4",
-    "eslint": "8.37.0",
-    "eslint-config-next": "13.2.4",
-    "i18next": "^22.4.13",
-    "ics": "^3.1.0",
-    "luxon": "^3.3.0",
-    "next": "13.2.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.0.2"
+    "@js-temporal/polyfill": "^0.4.4",
+    "computus": "^3.0.1",
+    "i18next": "^23.15.1",
+    "ics": "^3.8.1",
+    "next": "14.2.14",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@types/luxon": "^3.2.0",
-    "@types/node": "18.15.11",
-    "@types/react": "18.0.31",
-    "@types/react-dom": "18.0.11"
-  }
+    "@types/node": "22.7.4",
+    "@types/react": "18.3.10",
+    "@types/react-dom": "18.3.0",
+    "eslint-config-next": "14.2.14",
+    "typescript": "5.6.2"
+  },
+  "packageManager": "pnpm@9.12.0"
 }
