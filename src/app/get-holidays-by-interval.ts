@@ -1,9 +1,4 @@
-import { Temporal } from "@js-temporal/polyfill";
-
-import { Holiday } from "../utils/holiday";
-import { Interval } from "temporal-interval";
-import { getHolidaysByYear } from "./get-holidays-by-year";
-import { start } from "repl";
+import { getHolidaysByYear, type Holiday } from "./get-holidays-by-year";
 
 export function getHolidaysByInterval(
   startYear: number,
