@@ -12,26 +12,19 @@
     "start": "next start"
   },
   "dependencies": {
-    "@js-temporal/polyfill": "^0.4.4",
-    "@radix-ui/react-icons": "^1",
-    "@radix-ui/react-slot": "^1.1.0",
-    "@rhnorskov/prettier-config": "^2.0.1",
-    "class-variance-authority": "^0",
-    "clsx": "^2",
-    "computus": "^3.0.1",
-    "i18next": "^23.16.1",
-    "ics": "^3.8.1",
-    "lucide-react": "^0",
+    "@js-temporal/polyfill": "^0",
+    "computus": "^3",
+    "i18next": "^23",
+    "ics": "^3",
     "next": "^15.0.0-rc.1",
     "react": "^19.0.0-rc-65a56d0e-20241020",
-    "react-dom": "^19.0.0-rc-65a56d0e-20241020",
-    "tailwind-merge": "^2",
-    "tailwindcss-animate": "^1"
+    "react-dom": "^19.0.0-rc-65a56d0e-20241020"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@eslint/js": "^9",
     "@rhnorskov/eslint-config": "^2",
+    "@rhnorskov/prettier-config": "^2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
