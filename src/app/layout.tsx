@@ -1,8 +1,11 @@
+import "./globals.css";
+
 import { ReactNode } from "react";
 
 export const metadata = {
-  title: "Holidays",
-  description: "Holidays",
+  title: "Danish Holidays iCal API",
+  description:
+    "Easily integrate Danish holidays into your calendar. Simple, reliable, and always up-to-date.",
 };
 
 export interface RootLayoutProps {

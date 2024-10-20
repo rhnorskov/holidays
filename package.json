@@ -5,31 +5,41 @@
   "type": "module",
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "check-types": "tsc --noEmit",
+    "dev": "next dev --turbo",
+    "format": "prettier --write .",
     "lint": "next lint",
-    "start": "next start",
-    "format": "prettier --write ."
+    "start": "next start"
   },
   "dependencies": {
     "@js-temporal/polyfill": "^0.4.4",
+    "@radix-ui/react-icons": "^1",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@rhnorskov/prettier-config": "^2.0.1",
+    "class-variance-authority": "^0",
+    "clsx": "^2",
     "computus": "^3.0.1",
-    "eslint": "8",
-    "i18next": "^23.15.1",
+    "i18next": "^23.16.1",
     "ics": "^3.8.1",
-    "next": "14.2.14",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "lucide-react": "^0",
+    "next": "^15.0.0-rc.1",
+    "react": "^19.0.0-rc-65a56d0e-20241020",
+    "react-dom": "^19.0.0-rc-65a56d0e-20241020",
+    "tailwind-merge": "^2",
+    "tailwindcss-animate": "^1"
   },
   "devDependencies": {
-    "@rhnorskov/eslint-config": "^1",
-    "@rhnorskov/prettier-config": "^1",
-    "@types/node": "22.7.4",
-    "@types/react": "18.3.10",
-    "@types/react-dom": "18.3.0",
-    "eslint-config-next": "14.2.14",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.13",
-    "typescript": "5.6.2"
+    "@eslint/eslintrc": "^3",
+    "@eslint/js": "^9",
+    "@rhnorskov/eslint-config": "^2",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^9",
+    "eslint-config-next": "^15.0.0-rc.1",
+    "postcss": "^8",
+    "tailwindcss": "^3",
+    "typescript": "^5"
   },
-  "packageManager": "pnpm@9.12.0"
+  "packageManager": "bun@1.1.31"
 }
