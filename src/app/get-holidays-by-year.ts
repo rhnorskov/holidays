@@ -133,6 +133,16 @@ export function getHolidaysByYear(year: number): Holiday[] {
       isBankHoliday: false,
     },
     {
+      key: "saint.martins.eve",
+      date: date.with({ month: 11, day: 10 }),
+      isBankHoliday: false,
+    },
+    {
+      key: "saint.martins.day",
+      date: date.with({ month: 11, day: 11 }),
+      isBankHoliday: false,
+    },
+    {
       key: "christmas.eve",
       date: date.with({ month: 12, day: 24 }),
       isBankHoliday: false,
