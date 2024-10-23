@@ -34,7 +34,7 @@ export function getHolidaysByYear(year: number): Holiday[] {
     });
   };
 
-  const thanksgiving = firstThursdayOfMonth(11).add({ weeks: 4 });
+  const thanksgiving = firstThursdayOfMonth(11).add({ weeks: 3 });
 
   return [
     {
