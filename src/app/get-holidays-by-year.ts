@@ -26,6 +26,16 @@ export function getHolidaysByYear(year: number): Holiday[] {
     return lastDayOfMonth.subtract({ days: lastDayOfMonth.dayOfWeek % 7 });
   };
 
+  const firstThursdayOfMonth = (month: number) => {
+    const firstDayOfMonth = date.with({ month });
+
+    return firstDayOfMonth.add({
+      days: (4 - firstDayOfMonth.dayOfWeek + 7) % 7,
+    });
+  };
+
+  const thanksgiving = firstThursdayOfMonth(11).add({ weeks: 4 });
+
   return [
     {
       key: "new.years.day",
@@ -140,6 +150,16 @@ export function getHolidaysByYear(year: number): Holiday[] {
     {
       key: "saint.martins.day",
       date: date.with({ month: 11, day: 11 }),
+      isBankHoliday: false,
+    },
+    {
+      key: "thanksgiving",
+      date: thanksgiving,
+      isBankHoliday: false,
+    },
+    {
+      key: "black.friday",
+      date: thanksgiving.add({ days: 1 }),
       isBankHoliday: false,
     },
     {
