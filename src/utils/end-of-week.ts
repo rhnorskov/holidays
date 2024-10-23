@@ -7,15 +7,15 @@ export function endOfWeek<
     | Temporal.ZonedDateTime,
 >(date: T): T {
   if (date instanceof Temporal.PlainDate) {
-    return date.add({ days: 6 - date.dayOfWeek }) as T;
+    return date.add({ days: 7 - date.dayOfWeek }) as T;
   }
 
   if (date instanceof Temporal.PlainDateTime) {
-    return date.add({ days: 6 - date.dayOfWeek }) as T;
+    return date.add({ days: 7 - date.dayOfWeek }) as T;
   }
 
   if (date instanceof Temporal.ZonedDateTime) {
-    return date.add({ days: 6 - date.dayOfWeek }) as T;
+    return date.add({ days: 7 - date.dayOfWeek }) as T;
   }
 
   throw new Error("Invalid date");
