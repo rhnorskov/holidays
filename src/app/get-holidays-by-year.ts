@@ -1,8 +1,6 @@
 import { Temporal } from "@js-temporal/polyfill";
 import { computus } from "computus";
-
-import { endOfMonth } from "@/utils/end-of-month";
-import { endOfWeek } from "@/utils/end-of-week";
+import { endOfWeek, lastDayOfWeekOfMonth, nextDayOfWeek } from "temporal-fns";
 
 export interface Holiday {
   key: string;
@@ -20,21 +18,9 @@ export function getHolidaysByYear(year: number): Holiday[] {
 
   const easter = computus(year).toZonedDateTime("Europe/Copenhagen");
 
-  const lastSundayOfMonth = (month: number) => {
-    const lastDayOfMonth = endOfMonth(date.with({ month }));
-
-    return lastDayOfMonth.subtract({ days: lastDayOfMonth.dayOfWeek % 7 });
-  };
-
-  const firstThursdayOfMonth = (month: number) => {
-    const firstDayOfMonth = date.with({ month });
-
-    return firstDayOfMonth.add({
-      days: (4 - firstDayOfMonth.dayOfWeek + 7) % 7,
-    });
-  };
-
-  const thanksgiving = firstThursdayOfMonth(11).add({ weeks: 3 });
+  const thanksgiving = nextDayOfWeek(date.with({ month: 11 }), 4).add({
+    weeks: 3,
+  });
 
   return [
     {
@@ -54,7 +40,7 @@ export function getHolidaysByYear(year: number): Holiday[] {
     },
     {
       key: "daylight.saving.time.starts",
-      date: lastSundayOfMonth(3),
+      date: lastDayOfWeekOfMonth(date.with({ month: 3 }), 7),
       isBankHoliday: false,
     },
     {
@@ -134,7 +120,7 @@ export function getHolidaysByYear(year: number): Holiday[] {
     },
     {
       key: "daylight.saving.time.ends",
-      date: lastSundayOfMonth(10),
+      date: lastDayOfWeekOfMonth(date.with({ month: 10 }), 7),
       isBankHoliday: false,
     },
     {
